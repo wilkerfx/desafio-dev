@@ -1,138 +1,82 @@
 {% load static %}
-{% load bootstrap %}
+<html lang="pt-br">
+<!doctype html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>wilker_bycoders_test</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="static/bootstrap/vendor/bootstrap/css/bootstrap.min.css">
-    <!-- Google fonts-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700&amp;display=swap">
-    <!-- Owl carousel2-->
-    <link rel="stylesheet" href="static/bootstrap/vendor/owl.carousel2/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="static/bootstrap/vendor/owl.carousel2/assets/owl.theme.default.min.css">
-    <!-- Bootstrap Select-->
-    <link rel="stylesheet" href="static/bootstrap//vendor/bootstrap-select/css/bootstrap-select.min.css">
-    <!-- Lightbox-->
-    <link rel="stylesheet" href="static/bootstrap/vendor/lightbox2/css/lightbox.min.css">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="static/bootstrap/css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="static/bootstrap/css/custom.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/favicon.png">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-</head>
-<body>
-<!-- navbar-->
-<header class="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 py-lg-2">
-        <div class="container"><a class="navbar-brand py-3 d-flex align-items-center" href="{% url 'index' %}"><img
-                src="img/logo.svg" alt="" width="30"><span
-                class="text-uppercase text-small font-weight-bold text-dark ml-2 mb-0">wilker_bycoders_test</span></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <!-- Navbar link--><a class="nav-link active" href="{% url 'upload' %}">Upload</a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- Navbar link--><a class="nav-link" href="category.html">Lojas</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-<!-- Hero section-->
-<section class="hero-home py-5">
-    <div class="container pt-5">
-        <div class="row">
-            <div class="col-lg-7 mx-auto text-center">
-                <p class="h6 text-uppercase text-primary mb-3"></p>
-                <h1 class="mb-5">Adicione o ficheiro CNAB.</h1>
-                <form method="post" class="p-2 rounded shadow-sm bg-white" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <input type="file" name="document">
-                    <p>
-                    </p>
-                    <a class="btn btn-primary" type="submit" href="{% url 'upload' %}">Converter</a>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Features section-->
-<section class="py-5">
-    <div class="container py-5">
-        <div class="row text-center">
-            <div class="col-lg-10 mx-auto">
-                <div class="card border-0 shadow">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<footer style="background: #111;">
-    <div class="copyrights py-4" style="background: #0e0e0e">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-6 text-lg-left mb-2 mb-md-0">
-                    <p class="mb-0 text-muted mb-0 text-small">&copy; 2021 Todos os direitos reservados.</p>
-                </div>
-                <div class="col-md-6 col-sm-6 text-md-right">
-                    <p class="mb-0 text-muted mb-0 text-small">Sistema desenvolvido por<a
-                            class="reset-anchor text-primary" href="https://bootstraptemple.com/p/listings"> Wilker
-                        Flores</a>.</p>
-                    <!-- If you want to remove the backlink, please purchase the Attribution-Free License.-->
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- JavaScript files-->
-<script src="static/bootstrap/vendor/jquery/jquery.min.js"></script>
-<script src="static/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="static/bootstrap/vendor/owl.carousel2/owl.carousel.min.js"></script>
-<script src="static/bootstrap/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
-<script src="static/bootstrap/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-<script src="static/bootstrap/vendor/lightbox2/js/lightbox.min.js"></script>
-<script src="static/bootstrap/js/bootstrap-filestyle.min.js"></script>
-<script src="static/bootstrap/js/front.js"></script>
-<script>
-      // ------------------------------------------------------- //
-      //   Inject SVG Sprite - 
-      //   see more here 
-      //   https://css-tricks.com/ajaxing-svg-sprite/
-      // ------------------------------------------------------ //
-      function injectSvgSprite(path) {
-      
-          var ajax = new XMLHttpRequest();
-          ajax.open("GET", path, true);
-          ajax.send();
-          ajax.onload = function(e) {
-          var div = document.createElement("div");
-          div.className = 'd-none';
-          div.innerHTML = ajax.responseText;
-          document.body.insertBefore(div, document.body.childNodes[0]);
-          }
-      }
-      // this is set to BootstrapTemple website as you cannot 
-      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
-      // while using file:// protocol
-      // pls don't forget to change to your domain :)
-      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
-      
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-</script>
-<!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-</body>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+
+
+    <title>{% block title %}Home | wilker_bycoders_test{% endblock %}</title>
+
+{% block navbar %}
+
+   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                 class="d-inline-block align-top" alt="">
+            wilker_bycoders_test
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                 <li class="nav-item active">
+                    <!-- Navbar link--><a class="nav-link active" href="{% url 'index' %}">Home</a>
+                            <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <!-- Navbar link--><a class="nav-link active" href="{% url 'upload' %}">Importar</a>
+
+                </li>
+                <li class="nav-item active">
+                    <!-- Navbar link--><a class="nav-link active" href="{% url 'list' %}">Lista de Transações</a>
+                </li>
+
+
+                <li class="nav-item active" style="margin-left:785px">
+                        <li class="nav-item active" >
+                    <a class="nav-link" href="profile/{{user.id}}/">Conta do Usuário</a>
+                </li>
+                        <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+                            </li>
+                </li>
+            </ul>
+
+        </div>
+   </nav>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container" style="margin-top:94px">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-body">
+                    {% if user.is_authenticated %}
+                    <h1 class="card-title">Olá</h1>
+                        <h3>{{user.first_name}} {{user.last_name}}!</h3>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+

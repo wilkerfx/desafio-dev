@@ -1,13 +1,81 @@
-<!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="pt-br">
+<!doctype html>
 <head>
-    <meta charset="utf-8">
-    <title>BioScript | Web</title>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+
+
+    <title>{% block title %}Upload | wilker_bycoders_test{% endblock %}</title>
+
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                 class="d-inline-block align-top" alt="">
+            wilker_bycoders_test
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                 <li class="nav-item active">
+                    <!-- Navbar link--><a class="nav-link active" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <!-- Navbar link--><a class="nav-link active" href="{% url 'upload' %}">Importar</a>
+                                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <!-- Navbar link--><a class="nav-link active" href="{% url 'list' %}">Lista de Transações</a>
+                </li>
+                <li class="nav-item active" style="margin-left:785px">
+                        <li class="nav-item active" >
+                    <a class="nav-link" href="profile/{{user.id}}/">Conta do Usuário</a>
+                </li>
+                        <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+                            </li>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
 </head>
-<body>
-    <div>
-        <h1 class="mb-5">Upload efectuado com sucesso!</h1>
-        Voltar
+{% block body %}
+{% if messages %}
+{% for msg in messages %}
+<div class="alert alert-{{msg.level_tag}}" role="alert">
+    {{ msg.message }}
+    {% endfor %}
+    {% endif %}
+    {% endblock %}
+</div>
+<div class="container" style="margin-top:94px">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Adicione o arquivo CNAB.txt</h5>
+                    <p class="card-text"></p>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" name="file" accept=".txt">
+                        <button class="btn btn-primary" type="submit">Carregar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
+</div>
+</div>
 </html>
+
+{% endblock %}
