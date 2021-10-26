@@ -49,11 +49,9 @@ env\bin\python -m pip install -r requirements.txt
 Unix/MacOS.
 env/bin/python -m pip install -r requirements.txt
 
-API Endpoint:
+Link para a API Endpoint:
 /api/
-/api/transacoes-lista/
-api/transacoes-detalhe/
-api/transacoes-criar/
+
 
 
 
