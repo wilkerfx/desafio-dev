@@ -43,10 +43,13 @@ Os pacotes também podem ser encontrados na pasta do projeto no ficheiros requir
 Pode instalar os pacotes necessários no terminal com os commandos:
 
 Gere um arquivo de requisitos e, em seguida, instale-o em outro ambiente:
-Windows.
+
+Windows
+
 env\bin\python -m pip install -r requirements.txt
 
-Unix/MacOS.
+Unix/MacOS
+
 env/bin/python -m pip install -r requirements.txt
 
 Link para a API Endpoint:
