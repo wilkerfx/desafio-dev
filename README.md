@@ -12,14 +12,14 @@ O backend é Python + Django, tem um frontend em react que é uma view que lista
 Python 3.9
 
 # Sistema (FrontEnd)
-React
+React 17.0.2
 
-Abra o terminal no diretório do projecto e instale, crie e active um ambiente virtual:
-Instalar:
-pip install virtualenv
-
-OBS: 
+# Instalação
 Se tem alguma pasta com o nome venv apague antes de criar um novo.
+
+Crie e active um ambiente virtual:
+
+pip install virtualenv
 
 
 Criar:
@@ -85,13 +85,22 @@ urllib3==1.26.6
 # Instando os pacotes necessários (Backend)
 Os pacotes a serem instalados também podem ser encontrados no arquivo requirements.txt
 
-vá até ao diretório onde se encontra o arquivo requirements.txt e corra:
+No diretório onde se encontra o arquivo requirements.txt execute:
 pip install -r requirements.txt
 
+# Instando os pacotes necessários (FrontEnd)
+Os pacotes a serem instalados também podem ser encontrados no arquivo package.json
 
-# Usando o Sistema
+Vá até ao diretório onde se encontra o arquivo  package.jsone execute:
+npm install package-lock.json
+
+# Usando o Sistema (BackEnd)
 python manage.py runserver
 iniciar o server em 127.0.0.1:8000
+
+# Usando o Sistema
+npm start
+iniciar o server em localhost:3000/
 
 # Dados de autenticação
 Usuário: admin.
@@ -101,15 +110,10 @@ Senha: 123456.
 127.0.0.1:8000/api
 127.0.0.1:8000/api/transacoes-lista/
 
-
-# Instando os pacotes necessários (FrontEnd)
-Os pacotes a serem instalados também podem ser encontrados no arquivo package.json
-
-Vá até ao diretório onde se encontra o arquivo  package.jsone corra:
-npm install package.json
- 
-# Usando o Sistema
-npm start
-iniciar o server em localhost:3000/
+# Link o front frontend em React que consome do backend 127.0.0.1:8000/api/transacoes-lista/
+localhost:3000/
 
 
+
+
+#Boa Sorte para Mim. kkkkkkkkkk!!
