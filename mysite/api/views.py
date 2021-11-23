@@ -10,7 +10,7 @@ def api(request):
     api_urls = {
         'List': '/transacoes-lista/',
         'Detail View': '/transacoes-detalhe/<str:pk>/',
-        'Create': '/transacoes-create/',
+        'Create': '/transacoes-criar/',
     }
     return Response(api_urls)
 
