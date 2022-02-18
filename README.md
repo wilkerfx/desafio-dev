@@ -112,10 +112,3 @@ Senha: 123456.
 
 # Link o front frontend em React que consome do backend 127.0.0.1:8000/api/transacoes-lista/
 localhost:3000/
-
-
-
-
-
-
-# Boa Sorte para Mim. kkkkkkkkkk!!
